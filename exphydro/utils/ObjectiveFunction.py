@@ -33,14 +33,10 @@ class ObjectiveFunction(object):
         xbar = numpy.mean(obsdata)
         ybar = numpy.mean(simdata)
         nobs = obsdata.shape[0]
-        numer = 0.0
-        denom1 = 0.0
-        denom2 = 0.0
-    
-        for i in range(nobs):
-            numer += ((obsdata[i]-xbar)*(simdata[i]-ybar))
-            denom1 += numpy.square(obsdata[i]-xbar)
-            denom2 += numpy.square(simdata[i]-ybar)
+        
+        numer = numpy.sum(numpy.multiply(obsdata - xbar, simdata - ybar))
+        denom1 = numpy.sum(numpy.square(obsdata - xbar))
+        denom2 = numpy.sum(numpy.square(simdata - ybar))
 
         if denom2 == 0:
             kge = -9999
@@ -67,14 +63,8 @@ class ObjectiveFunction(object):
 
         """
         
-        xbar = numpy.mean(obsdata)
-        nobs = obsdata.shape[0]
-        numer = 0.0
-        denom = 0.0
-
-        for i in range(nobs):
-            numer += numpy.square(obsdata[i] - simdata[i])
-            denom += numpy.square(obsdata[i] - xbar)
+        numer = numpy.sum(numpy.square(obsdata - simdata))
+        denom = numpy.sum(numpy.square(obsdata - numpy.mean(obsdata)))
 
         nse = 1.0 - (numer/denom)
         return nse
