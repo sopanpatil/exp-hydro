@@ -3,8 +3,8 @@
 # Programmer(s): Sopan Patil.
 
 """ MAIN PROGRAM FILE
-Run this file to optimise the EXP-HYDRO model parameters
-using Particle Swarm Optimisation (PSO) algorithm.
+Run this file to optimise the model parameters of the spatially lumped
+version of EXP-HYDRO model using Particle Swarm Optimisation (PSO) algorithm.
 """
 
 import numpy
