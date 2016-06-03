@@ -11,6 +11,7 @@ setup(name='exphydro',
 		'Programming Language :: Python :: 2.7',
 		'License :: OSI Approved :: MIT License',
 		'Topic :: Scientific/Engineering',
+		'Intended Audience :: Science/Research'
 		],
 	)
 
