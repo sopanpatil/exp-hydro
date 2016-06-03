@@ -3,8 +3,13 @@
 # Programmer(s): Sopan Patil.
 
 """ MAIN PROGRAM FILE
-Run this file to optimise the EXP-HYDRO model parameters
-using Particle Swarm Optimisation (PSO) algorithm.
+Run this file to optimise the model parameters of the spatially distributed
+version of EXP-HYDRO model using Particle Swarm Optimisation (PSO) algorithm.
+
+Note that in the current version, all pixels have equal drainage area and receive
+the same meteorological inputs.  Moreover, channel routing is also ignored and
+it is assumed that streamflow generated from each pixel reaches the catchment
+outlet on same day.
 """
 
 import numpy
@@ -31,11 +36,11 @@ T = numpy.genfromtxt('SampleData/T_test.txt')  # Observed air temperature (deg C
 PET = numpy.genfromtxt('SampleData/PET_test.txt')  # Potential evapotranspiration (mm/day)
 Qobs = numpy.genfromtxt('SampleData/Q_test.txt')  # Observed streamflow (mm/day)
 
-# Specify the no. of parameter sets (particles) in a PSO swarm
-npart = 10
-
 # Specify the number of pixels in the catchment
 npixels = 5
+
+# Specify the no. of parameter sets (particles) in a PSO swarm
+npart = 10
 
 # Generate 'npart' initial EXP-HYDRO model parameters
 params = [ExphydroDistrParameters(npixels) for j in range(npart)]
