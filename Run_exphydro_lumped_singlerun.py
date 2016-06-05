@@ -11,7 +11,7 @@ import numpy
 import os
 import matplotlib.pyplot as plt
 from exphydro.lumped import ExphydroModel, ExphydroParameters
-from exphydro.utils import Calibration, ObjectiveFunction
+from exphydro.utils import ObjectiveFunction
 
 ######################################################################
 # SET WORKING DIRECTORY
@@ -36,7 +36,14 @@ params = ExphydroParameters()
 
 # Specify the parameter values
 # Please refer to Patil and Stieglitz (2014) for model parameter descriptions
-f = 0.07; smax = 200; qmax = 20; ddf = 2; mint = -1; maxt = 1
+f = 0.07
+smax = 200
+qmax = 20
+ddf = 2
+mint = -1
+maxt = 1
+
+# Assign the above parameter values into the model parameters object
 params.assignvalues(f, smax, qmax, ddf, mint, maxt)
 
 # Initialise the model by loading its climate inputs
@@ -50,13 +57,14 @@ simperiods_sim = [365, 2557]
 
 # Run the model and calculate objective function value for the simulation period
 Qsim = model.simulate(params)
-kge = ObjectiveFunction.klinggupta(Qobs[simperiods_obs[0]:simperiods_obs[1]+1], Qsim[simperiods_sim[0]:simperiods_sim[1]+1])
+kge = ObjectiveFunction.klinggupta(Qobs[simperiods_obs[0]:simperiods_obs[1]+1],
+                                   Qsim[simperiods_sim[0]:simperiods_sim[1]+1])
 print 'KGE value = ', kge
 
 # Plot the observed and simulated hydrographs
-plt.plot(Qobs[simperiods_obs[0]:simperiods_obs[1]+1],'b-')
+plt.plot(Qobs[simperiods_obs[0]:simperiods_obs[1]+1], 'b-')
 plt.hold(True)
-plt.plot(Qsim[simperiods_sim[0]:simperiods_sim[1]+1],'r-')
+plt.plot(Qsim[simperiods_sim[0]:simperiods_sim[1]+1], 'r-')
 plt.show()
 
 ######################################################################

@@ -51,7 +51,8 @@ calperiods_obs = [365, 2557]
 calperiods_sim = [365, 2557]
 
 # Calibrate the model to identify optimal parameter set
-paramsmax = Calibration.montecarlo_maximise(model, params, Qobs, ObjectiveFunction.klinggupta, calperiods_obs, calperiods_sim)
+paramsmax = Calibration.montecarlo_maximise(model, params, Qobs, ObjectiveFunction.klinggupta,
+                                            calperiods_obs, calperiods_sim)
 print 'Calibration run KGE value = ', paramsmax.objval
 
 # Run the optimised model for validation period
@@ -60,9 +61,9 @@ kge = ObjectiveFunction.klinggupta(Qobs[calperiods_obs[1]:], Qsim[calperiods_sim
 print 'Independent run KGE value = ', kge
 
 # Plot the observed and simulated hydrographs
-plt.plot(Qobs[calperiods_obs[0]:],'b-')
+plt.plot(Qobs[calperiods_obs[0]:], 'b-')
 plt.hold(True)
-plt.plot(Qsim[calperiods_sim[0]:],'r-')
+plt.plot(Qsim[calperiods_sim[0]:], 'r-')
 plt.show()
 
 ######################################################################
