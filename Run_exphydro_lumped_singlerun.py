@@ -36,12 +36,8 @@ params = ExphydroParameters()
 
 # Specify the parameter values
 # Please refer to Patil and Stieglitz (2014) for model parameter descriptions
-params.f.value = 0.07       # f
-params.smax.value = 200     # Smax
-params.qmax.value = 20      # Qmax
-params.ddf.value = 2        # Df
-params.mint.value = -1      # Tmin
-params.maxt.value = 1       # Tmax
+f = 0.07; smax = 200; qmax = 20; ddf = 2; mint = -1; maxt = 1
+params.assignvalues(f, smax, qmax, ddf, mint, maxt)
 
 # Initialise the model by loading its climate inputs
 model = ExphydroModel(P, PET, T)

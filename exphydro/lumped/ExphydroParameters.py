@@ -28,9 +28,24 @@ class ExphydroParameters(object):
 
     # ----------------------------------------------------------------
 
+    def assignvalues(self, f, smax, qmax, ddf, mint, maxt):
+
+        """ This method is used to manually assign parameter values,
+        which are given by the user as input arguments.
+        """
+
+        self.f.value = f
+        self.smax.value = smax
+        self.qmax.value = qmax
+        self.ddf.value = ddf
+        self.mint.value = mint
+        self.maxt.value = maxt
+
+    # ----------------------------------------------------------------
+
     def updateparameters(self, param1, param2, w):
 
-        """ This function is used for PSO algorithm.
+        """ This method is used for PSO algorithm.
             Each parameter in the model has to do the following
             two things:
             (1) Update its velocity
