@@ -12,6 +12,7 @@ warnings.filterwarnings("ignore")
 
 ######################################################################
 
+
 class OdeSolver(object):
 
     """ The 'OdeSolver' class contains the method for solving a system of
@@ -27,7 +28,7 @@ class OdeSolver(object):
 
         Args:
             (1) userfunction: Function that provides the right hand side equations of the ODE system
-				of the user's model.
+            of the user's model.
 
             (2) initstate: Initial values of the state variables in the ODE system.
 
@@ -66,15 +67,15 @@ class OdeSolver(object):
         """
         t = numpy.arange(tlength)
         n = len(t)
-        x = numpy.array( [ x0 ] * n )
+        x = numpy.array([x0] * n)
 
-        for i in xrange( n - 1 ):
+        for i in xrange(n - 1):
             h = t[i+1] - t[i]
-            k1 = h * f( t[i], x[i], para )
-            k2 = h * f( t[i] + 0.5 * h, x[i] + 0.5 * k1, para )
-            k3 = h * f( t[i] + 0.5 * h, x[i] + 0.5 * k2, para )
-            k4 = h * f( t[i+1], x[i] + k3, para )
-            x[i+1] = x[i] + ( k1 + 2.0 * ( k2 + k3 ) + k4 ) / 6.0
+            k1 = h * f(t[i], x[i], para)
+            k2 = h * f(t[i] + 0.5 * h, x[i] + 0.5 * k1, para)
+            k3 = h * f(t[i] + 0.5 * h, x[i] + 0.5 * k2, para)
+            k4 = h * f(t[i+1], x[i] + k3, para)
+            x[i+1] = x[i] + (k1 + 2.0 * (k2 + k3) + k4) / 6.0
 
 
 ##################################################################################
