@@ -5,9 +5,9 @@
 
 import numpy
 from exphydro.lumped import ExphydroModel
-from exphydro.utils import OdeSolver
 
 ######################################################################
+
 
 class ExphydroDistrModel(object):
 
@@ -29,7 +29,7 @@ class ExphydroDistrModel(object):
         self.model = [ExphydroModel(p, pet, t) for j in range(npixels)]
 
         self.timespan = p.shape[0]  # Time length of the simulation period
-        self.qsimtmp = numpy.zeros(self.timespan) # Variable to temporarily store pixel's streamflow output
+        self.qsimtmp = numpy.zeros(self.timespan)  # Variable to temporarily store pixel's streamflow output
         self.qsim = numpy.zeros(self.timespan)  # Simulated streamflow (mm/day)
 
     # ----------------------------------------------------------------

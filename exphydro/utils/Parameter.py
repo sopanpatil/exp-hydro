@@ -11,22 +11,21 @@ import numpy
 class Parameter(object):
 
     """ The 'Parameter' class defines the basic properties of a parameter, such as
-	its upper bound, lower bound, numeric value, and velocity (in case of PSO).
-
+    its upper bound, lower bound, numeric value, and velocity (in case of PSO).
     """
 
     def __init__(self, lb, ub):
 
-	""" This method is used to create an instance of the Parameter class.
+        """ This method is used to create an instance of the Parameter class.
 
         Syntax: Parameter(lb,ub)
 
-	Args:
+        Args:
             (1) lb: Lower bound value of the parameter.
 
             (2) ub: Upper bound value of the parameter.
+        """
 
-	"""
         self.lb = lb  # Lower bound of a parameter
         self.ub = ub  # Upper bound of a parameter
         self.value = numpy.random.uniform(lb, ub)  # Random sampling of parameter value
