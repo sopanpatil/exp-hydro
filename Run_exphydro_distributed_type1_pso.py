@@ -6,16 +6,18 @@
 Run this file to optimise the model parameters of the spatially distributed
 version of EXP-HYDRO model using Particle Swarm Optimisation (PSO) algorithm.
 
-Note that in the current version, all pixels have equal drainage area and receive
-the same meteorological inputs.  Moreover, channel routing is also ignored and
-it is assumed that streamflow generated from each pixel reaches the catchment
-outlet on same day.
+Type 1 Model:
+- This type of distributed model is pixel based (i.e., all sub-components
+have the same drainage area).
+- All pixels receive the same meteorological inputs.
+- Channel routing is ignored and it is assumed that streamflow generated from
+each pixel reaches the catchment outlet on same day.
 """
 
 import numpy
 import os
 import matplotlib.pyplot as plt
-from exphydro.distributed import ExphydroDistrModel, ExphydroDistrParameters
+from exphydro.distributed.type1 import ExphydroDistrModel, ExphydroDistrParameters
 from exphydro.utils import Calibration, ObjectiveFunction
 
 ######################################################################
