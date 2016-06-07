@@ -17,7 +17,8 @@ each pixel reaches the catchment outlet on same day.
 import numpy
 import os
 import matplotlib.pyplot as plt
-from exphydro.distributed.type1 import ExphydroDistrModel, ExphydroDistrParameters
+from exphydro.distributed import ExphydroDistrParameters
+from exphydro.distributed.type1 import ExphydroDistrModel
 from exphydro.utils import Calibration, ObjectiveFunction
 
 ######################################################################
