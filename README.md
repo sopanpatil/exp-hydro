@@ -8,7 +8,8 @@ The following data from a sample catchment are provided (in SampleData folder) t
 
 SPATIALLY LUMPED VERSION:
 
-Following are the execution files for running the spatially lumped version of EXP-HYDRO:
+Following execution files have been provided to quickly test the spatially lumped version of EXP-HYDRO (use these as an example to set up your own model run):
+
 (1) Run_exphydro_lumped_pso.py: This calibrates EXP-HYDRO parameters using the Particle Swarm Optimisation (fast method).
 
 (2) Run_exphydro_lumped_mc.py: This calibrates EXP-HYDRO parameters using a simple Monte Carlo method (slow method).
@@ -26,6 +27,8 @@ Type 2: A Type 2 model is a pixel based distributed model where each pixel recei
 Type 3: A Type 3 model is a sub-catchment based distributed model where all sub-catchments receive the same meteorological inputs.  The main difference compared to the pixel based model is that the sub-catchments can have different drainage areas, whereas all pixels have the same area.  An extra input argument 'subcatwts' is needed to initialise the ExpHydroDistrModel object for Type 3.  'subcatwts' is an array containing the areal weights of all sub-catchments and the sum of all array elements is 1.
 
 Type 4: A Type 4 model is a sub-catchment based distributed model (like Type 3) where each sub-catchment receives its own meteorological inputs.
+
+Only one execution file has been provided to quickly test the Type 1 distributed model (Run_exphydro_distributed_type1_pso.py).  This code calibrates the EXP-HYDRO parameters using the Particle Swarm Optimisation method for Type 1 model.
 
 SYSTEM REQUIREMENTS:
 
