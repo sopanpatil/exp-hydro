@@ -19,13 +19,13 @@ SPATIALLY DISTRIBUTED VERSION:
 
 Four types of spatially distributed EXP-HYDRO models have been included in the code.
 
-Type 1:
+Type 1: A Type 1 model is a pixel based distributed model where all pixels receive the same meteorological inputs.
 
-Type 2:
+Type 2: A Type 2 model is a pixel based distributed model where each pixel receives its own meteorological inputs.
 
-Type 3:
+Type 3: A Type 3 model is a sub-catchment based distributed model where all sub-catchments receive the same meteorological inputs.  The main difference compared to the pixel based model is that the sub-catchments can have different drainage areas, whereas all pixels have the same area.  An extra input argument 'subcatwts' is needed to initialise the ExpHydroDistrModel object for Type 3.  'subcatwts' is an array containing the areal weights of all sub-catchments and the sum of all array elements is 1.
 
-Type 4:
+Type 4: A Type 4 model is a sub-catchment based distributed model (like Type 3) where each sub-catchment receives its own meteorological inputs.
 
 SYSTEM REQUIREMENTS:
 
