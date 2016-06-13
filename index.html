@@ -28,20 +28,46 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <p><strong>EXP-HYDRO</strong> is a catchment scale hydrological model that operates at a daily time-step. It takes as inputs the daily values of precipitation, air temperature, and potential evapotranspiration, and simulates daily streamflow at the catchment outlet. This model was originally developed by Dr Sopan Patil in 2010 as part of his PhD research. Our research group (<a href="http://sopanpatil.weebly.com">http://sopanpatil.weebly.com</a>) continues its active development in both spatially lumped and spatially distributed configurations. The source code provided is written in Python programming language and has been tested using Python 2.7. Data from a sample catchment in Wales are also provided in the SampleData folder to test the model code.</p>
+          <p><strong>EXP-HYDRO</strong> is a catchment scale hydrological model that operates at a daily time-step. It takes as inputs the daily values of precipitation, air temperature, and potential evapotranspiration, and simulates daily streamflow at the catchment outlet. This model was originally developed by Dr Sopan Patil in 2010 as part of his PhD research. Our research group (<a href="http://sopanpatil.weebly.com">http://sopanpatil.weebly.com</a>) continues its active development in both spatially lumped and spatially distributed configurations.  The name EXP-HYDRO is an acronym for Exponential Bucket Hydrological Model.</p>
 
-<p>Following execution files are provided for running EXP-HYDRO, which can be modified by the users as per their requirements:</p>
+<p>The source code provided is written in Python programming language and has been tested using Python 2.7.</p>
 
-<p>(1) <strong>Run_exphydro_lumped_pso.py</strong>: Performs a calibration and validation run of the lumped EXP-HYDRO model using Particle Swarm Optimisation (PSO) algorithm.</p>
+<p>The following data from a sample catchment are provided (in SampleData folder) to test the model code: P_test.txt (Precipitation data), T_test.txt (Air temperature data), PET_test.txt (Potential evapotranspiration data), Q_test.txt (catchment streamflow data).</p>
 
-<p>(2) <strong>Run_exphydro_distributed_pso.py</strong>: Performs a calibration and validation run of the distributed EXP-HYDRO model using PSO algorithm.</p>
+<p><strong>SPATIALLY LUMPED VERSION:</strong></p>
 
-<p><strong>System Requirements:</strong> Please make sure that the following Python packages are installed on your computer before running any of the above execution files:
+<p>Following execution files have been provided to quickly test the spatially lumped version of EXP-HYDRO (use these as an example to set up your own model run):</p>
+
+<p>(1) <strong>Run_exphydro_lumped_pso.py:</strong> This calibrates EXP-HYDRO parameters using the Particle Swarm Optimisation (fast method).</p>
+
+<p>(2) <strong>Run_exphydro_lumped_mc.py:</strong> This calibrates EXP-HYDRO parameters using a simple Monte Carlo method (slow method).</p>
+
+<p>(3) <strong>Run_exphydro_lumped_singlerun.py:</strong> This performs a single model run of EXP-HYDRO, but the user has to specify the model parameters beforehand.</p>
+
+<p><strong>SPATIALLY DISTRIBUTED VERSION:</strong></p>
+
+<p>Four types of spatially distributed EXP-HYDRO models have been included in the code.</p>
+
+<p><strong>Type 1:</strong> A Type 1 model is a pixel based distributed model where all pixels receive the same meteorological inputs.</p>
+
+<p><strong>Type 2:</strong> A Type 2 model is a pixel based distributed model where each pixel receives its own meteorological inputs.</p>
+
+<p><strong>Type 3:</strong> A Type 3 model is a sub-catchment based distributed model where all sub-catchments receive the same meteorological inputs.  The main difference compared to the pixel based model is that the sub-catchments can have different drainage areas, whereas all pixels have the same area.  An extra input argument 'subcatwts' is needed to initialise the ExpHydroDistrModel object for Type 3.  'subcatwts' is an array containing the areal weights of all sub-catchments and the sum of all array elements is 1.</p>
+
+<p><strong>Type 4:</strong> A Type 4 model is a sub-catchment based distributed model (like Type 3) where each sub-catchment receives its own meteorological inputs.</p>
+
+<p>Only one execution file has been provided to quickly test the Type 1 distributed model (<strong>Run_exphydro_distributed_type1_pso.py</strong>).  This code calibrates the EXP-HYDRO parameters using the Particle Swarm Optimisation method for Type 1 model.</p>
+
+<p><strong>SYSTEM REQUIREMENTS:</strong></p>
+
+<p>Please make sure that the following Python packages are installed on your computer before running any of the above execution files:
 (1) NumPy (<a href="http://www.numpy.org/">http://www.numpy.org/</a>)
 (2) SciPy (<a href="http://www.scipy.org/">http://www.scipy.org/</a>)
 (3) matplotlib (<a href="http://matplotlib.org/">http://matplotlib.org/</a>)</p>
 
-<p><strong>Relevant citation</strong>: Patil, S. and M. Stieglitz (2014) Modelling daily streamflow at ungauged catchments: What information is necessary?, Hydrological Processes, 28(3), 1159-1169, doi:10.1002/hyp.9660.</p>
+<p><strong>RELEVANT CITATION:</strong></p>
+
+<p>Patil, S. and M. Stieglitz (2014) Modelling daily streamflow at ungauged catchments: What information is necessary?, Hydrological Processes, 28(3), 1159-1169, doi:10.1002/hyp.9660.</p>
         </section>
 
         <aside id="sidebar">
