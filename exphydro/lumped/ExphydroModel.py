@@ -72,35 +72,13 @@ class ExphydroModel(object):
         pet = self.PET[tt]
 
         # Partitioning precipitation into rain and snow
-        if te < mint:
-            ps = p
-            pr = 0
-        else:
-            ps = 0
-            pr = p
+        [ps, pr] = self.rainsnowpartition(p, te, mint)
 
         # Snow bucket
-        if te > maxt:
-            if s[0] > 0:
-                m = min(s[0], ddf*(te - maxt))
-            else:
-                m = 0
-        else:
-            m = 0
+        m = self.snowbucket(s[0], te, ddf, maxt)
 
         # Soil bucket
-        if s[1] < 0:
-            et = 0
-            qsub = 0
-            qsurf = 0
-        elif s[1] > smax:
-            et = pet
-            qsub = qmax
-            qsurf = s[1] - smax
-        else:
-            qsub = qmax*numpy.exp(-f*(smax - s[1]))
-            qsurf = 0
-            et = pet*(s[1]/smax)
+        [et, qsub, qsurf] = self.soilbucket(s[1], pet, f, smax, qmax)
 
         # Water balance equations
         ds1 = ps - m
@@ -115,6 +93,62 @@ class ExphydroModel(object):
         self.melt[tt] = m
 
         return ds
+
+    # ----------------------------------------------------------------
+
+    @staticmethod
+    def rainsnowpartition(p, t, mint):
+
+        """ EXP-HYDRO equations to partition incoming precipitation
+        into rain or snow."""
+
+        if t < mint:
+            psnow = p
+            prain = 0
+        else:
+            psnow = 0
+            prain = p
+
+        return [psnow, prain]
+
+    # ----------------------------------------------------------------
+
+    @staticmethod
+    def snowbucket(s, t, ddf, maxt):
+
+        """ EXP-HYDRO equations for the snow bucket."""
+
+        if t > maxt:
+            if s > 0:
+                melt = min(s, ddf*(t - maxt))
+            else:
+                melt = 0
+        else:
+            melt = 0
+
+        return melt
+
+    # ----------------------------------------------------------------
+
+    @staticmethod
+    def soilbucket(s, pet, f, smax, qmax):
+
+        """ EXP-HYDRO equations for the soil bucket."""
+
+        if s < 0:
+            et = 0
+            qsub = 0
+            qsurf = 0
+        elif s > smax:
+            et = pet
+            qsub = qmax
+            qsurf = s - smax
+        else:
+            qsub = qmax * numpy.exp(-f * (smax - s))
+            qsurf = 0
+            et = pet * (s / smax)
+
+        return [et, qsub, qsurf]
 
     # ----------------------------------------------------------------
 
