@@ -1,8 +1,8 @@
 # EXP-HYDRO Hydrological Model
 
-`exphydro` is a Python package that implements EXP-HYDRO, which is a catchment scale hydrological model that operates at a daily time-step. It takes as inputs the daily values of precipitation, air temperature, and potential evapotranspiration, and simulates daily streamflow at the catchment outlet. This model was originally developed by Dr Sopan Patil in 2010 as part of his PhD research. Our research group (http://sopanpatil.weebly.com) continues its active development in both spatially lumped and spatially distributed configurations.  The name EXP-HYDRO is an acronym for Exponential Bucket Hydrological Model.
+`exphydro` is a catchment scale hydrological model that operates at a daily time-step. It takes as inputs the daily values of precipitation, air temperature, and potential evapotranspiration, and simulates daily streamflow at the catchment outlet. This model was originally developed by Dr Sopan Patil in 2010 as part of his PhD research. Our research group (http://sopanpatil.weebly.com) continues its active development in both spatially lumped and spatially distributed configurations.  The name EXP-HYDRO is an acronym for Exponential Bucket Hydrological Model.
 
-The source code provided is written in Python programming language and has been tested using Python 2.7.
+The source code of `exphydro` is written in Python programming language and has been tested using Python 2.7.
 
 The following data from a sample catchment are provided (in SampleData folder) to test the model code: P_test.txt (Precipitation data), T_test.txt (Air temperature data), PET_test.txt (Potential evapotranspiration data), Q_test.txt (catchment streamflow data).
 
@@ -12,11 +12,11 @@ SPATIALLY LUMPED VERSION:
 
 Following execution files have been provided to quickly test the spatially lumped version of EXP-HYDRO (use these as an example to set up your own model run):
 
-(1) Run_exphydro_lumped_pso.py: This calibrates EXP-HYDRO parameters using the Particle Swarm Optimisation (fast method).
+(1) `Run_exphydro_lumped_pso.py`: This calibrates EXP-HYDRO parameters using the Particle Swarm Optimisation (fast method).
 
-(2) Run_exphydro_lumped_mc.py: This calibrates EXP-HYDRO parameters using a simple Monte Carlo method (slow method).
+(2) `Run_exphydro_lumped_mc.py`: This calibrates EXP-HYDRO parameters using a simple Monte Carlo method (slow method).
 
-(3) Run_exphydro_lumped_singlerun.py: This performs a single model run of EXP-HYDRO, but the user has to specify the model parameters beforehand.
+(3) `Run_exphydro_lumped_singlerun.py`: This performs a single model run of EXP-HYDRO, but the user has to specify the model parameters beforehand.
 
 - - - -
 
@@ -32,7 +32,7 @@ Type 3: A Type 3 model is a sub-catchment based distributed model where all sub-
 
 Type 4: A Type 4 model is a sub-catchment based distributed model (like Type 3) where each sub-catchment receives its own meteorological inputs.
 
-Only one execution file has been provided to quickly test the Type 1 distributed model (Run_exphydro_distributed_type1_pso.py).  This code calibrates the EXP-HYDRO parameters using the Particle Swarm Optimisation method for Type 1 model.
+Only one execution file has been provided to quickly test the Type 1 distributed model (`Run_exphydro_distributed_type1_pso.py`).  This code calibrates the EXP-HYDRO parameters using the Particle Swarm Optimisation method for Type 1 model.
 
 - - - -
 
