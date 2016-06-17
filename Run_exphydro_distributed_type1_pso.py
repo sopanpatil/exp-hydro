@@ -19,7 +19,7 @@ import os
 import matplotlib.pyplot as plt
 from exphydro.distributed import ExphydroDistrParameters
 from exphydro.distributed.type1 import ExphydroDistrModel
-from exphydro.utils import Calibration, ObjectiveFunction
+from hydroutils import Calibration, ObjectiveFunction
 
 ######################################################################
 # SET WORKING DIRECTORY

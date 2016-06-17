@@ -3,7 +3,7 @@
 # Programmer(s): Sopan Patil.
 # This file is part of the 'exphydro.lumped' package.
 
-from exphydro.utils import Parameter
+from hydroutils import Parameter
 
 
 ######################################################################

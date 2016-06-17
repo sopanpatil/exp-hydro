@@ -4,7 +4,7 @@
 # This file is part of the 'exphydro.lumped' package.
 
 import numpy
-from exphydro.utils import OdeSolver
+from hydroutils import OdeSolver
 
 
 ######################################################################

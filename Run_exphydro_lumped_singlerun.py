@@ -11,7 +11,7 @@ import numpy
 import os
 import matplotlib.pyplot as plt
 from exphydro.lumped import ExphydroModel, ExphydroParameters
-from exphydro.utils import ObjectiveFunction
+from hydroutils import ObjectiveFunction
 
 ######################################################################
 # SET WORKING DIRECTORY
