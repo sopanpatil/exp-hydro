@@ -14,13 +14,17 @@ Linux/Mac OS X:
 
 After downloading and extracting the exp-hydro folder from GitHub, open Terminal and navigate to the exp-hydro folder which contains the `setup.py` file.  Make sure that you have administrator priveleges (can be obtained by typing `su` in Linux).  Then, type the following command:
 
-`python setup.py install`
+```bash
+python setup.py install
+```
 
 Windows:
 
-Use command prompt to navigate to the exp-hydro folder, and type the following command:
+Use command prompt to navigate to the downloaded exp-hydro folder, and type the following command:
 
-`setup.py install`
+```bash
+setup.py install
+```
 
 This will install `exphydro` and all its dependent packages on your computer.
 
