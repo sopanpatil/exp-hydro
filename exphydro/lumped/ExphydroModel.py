@@ -159,7 +159,7 @@ class ExphydroModel(object):
         """
 
         # Solving the ODE. To check which ODE solvers are available to use,
-        # please check OdeSolver.py in bangormodeltools
+        # please check OdeSolver.py in hydroutils package
         OdeSolver.solve_rk4(self.waterbalance, self.storage, para, tlength=self.timespan)
         return self.qsim
 
