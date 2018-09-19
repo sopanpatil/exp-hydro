@@ -16,10 +16,13 @@ each pixel reaches the catchment outlet on same day.
 
 import numpy
 import os
+import time
 import matplotlib.pyplot as plt
 from exphydro.distributed import ExphydroDistrParameters
 from exphydro.distributed.type1 import ExphydroDistrModel
 from hydroutils import Calibration, ObjectiveFunction
+
+start_time = time.time()
 
 ######################################################################
 # SET WORKING DIRECTORY
@@ -65,6 +68,8 @@ print 'Calibration run KGE value = ', paramsmax.objval
 Qsim = model.simulate(paramsmax)
 kge = ObjectiveFunction.klinggupta(Qobs[calperiods_obs[1]:], Qsim[calperiods_sim[1]:])
 print 'Independent run KGE value = ', kge
+
+print("Total runtime: %s seconds" % (time.time() - start_time))
 
 # Plot the observed and simulated hydrographs
 plt.plot(Qobs[calperiods_obs[0]:], 'b-')
