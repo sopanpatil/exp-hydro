@@ -61,7 +61,7 @@ class ExphydroModel(object):
 
         # The line below ensures that the time step of input and output variables is always an integer.
         # ODE solvers can take fractional time steps, for which input data does not exist.
-        tt = min(round(t), self.timespan-1)
+        tt = int(min(round(t), self.timespan-1))
 
         # NOTE: The min condition in above line is very important and is needed when the ODE solver
         # jumps to a time-step that is beyond the time-series length.
