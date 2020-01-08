@@ -59,7 +59,7 @@ simperiods_sim = [365, 2557]
 Qsim = model.simulate(params)
 kge = ObjectiveFunction.klinggupta(Qobs[simperiods_obs[0]:simperiods_obs[1]+1],
                                    Qsim[simperiods_sim[0]:simperiods_sim[1]+1])
-print 'KGE value = ', kge
+print('KGE value = ', kge)
 
 # Plot the observed and simulated hydrographs
 plt.plot(Qobs[simperiods_obs[0]:simperiods_obs[1]+1], 'b-')
