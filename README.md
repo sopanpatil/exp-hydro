@@ -2,7 +2,7 @@
 
 EXP-HYDRO is a catchment scale hydrological model that operates at a daily time-step. It takes as inputs the daily values of precipitation, air temperature, and potential evapotranspiration, and simulates daily streamflow at the catchment outlet. This model was originally developed by Dr Sopan Patil in 2010 as part of his PhD research. Our research group (http://sopanpatil.weebly.com) continues its active development in both spatially lumped and spatially distributed configurations.  The name EXP-HYDRO is an acronym for Exponential Bucket Hydrological Model.
 
-The source code provided is written in Python programming language and has been tested using Python 2.7.
+The source code provided is written in Python programming language and has been tested using Python 3.7.
 
 The following data from a sample catchment are provided (in SampleData folder) to test the model code: P_test.txt (Precipitation data), T_test.txt (Air temperature data), PET_test.txt (Potential evapotranspiration data), Q_test.txt (catchment streamflow data).
 
@@ -15,7 +15,7 @@ Linux/Mac OS X:
 After downloading and extracting the exp-hydro folder from GitHub, open Terminal and navigate to the exp-hydro folder which contains the `setup.py` file.  Make sure that you have administrator priveleges (can be obtained by typing `su` in Linux).  Then, type the following command:
 
 ```bash
-python setup.py install
+python3 setup.py install
 ```
 
 Windows:
