@@ -63,7 +63,6 @@ print('KGE value = ', kge)
 
 # Plot the observed and simulated hydrographs
 plt.plot(Qobs[simperiods_obs[0]:simperiods_obs[1]+1], 'b-')
-plt.hold(True)
 plt.plot(Qsim[simperiods_sim[0]:simperiods_sim[1]+1], 'r-')
 plt.show()
 

@@ -63,7 +63,6 @@ print("Total runtime: %s seconds" % (time.time() - start_time))
 
 # Plot the observed and simulated hydrographs
 plt.plot(Qobs[calperiods_obs[0]:], 'b-')
-plt.hold(True)
 plt.plot(Qsim[calperiods_sim[0]:], 'r-')
 plt.show()
 
