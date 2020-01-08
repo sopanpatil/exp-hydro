@@ -7,7 +7,7 @@ setup(name='exphydro',
       license='MIT',
       packages=['exphydro'],
       install_requires=['numpy', 'scipy', 'matplotlib', 'hydroutils'],
-      dependency_links=['https://github.com/sopanpatil/hydroutils/tarball/experimental#egg=hydroutils-1.1'],
+      dependency_links=['https://github.com/sopanpatil/hydroutils/tarball/master#egg=hydroutils-1.1'],
       classifiers=[
           'Programming Language :: Python :: 3.7',
           'License :: OSI Approved :: MIT License',
