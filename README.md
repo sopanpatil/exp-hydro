@@ -66,6 +66,7 @@ Please make sure that the following Python packages are installed on your comput
 (1) NumPy (http://www.numpy.org/)
 (2) SciPy (http://www.scipy.org/)
 (3) matplotlib (http://matplotlib.org/)
+(4) hydroutils (https://github.com/sopanpatil/hydroutils)
 
 - - - -
 
