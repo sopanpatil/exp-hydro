@@ -10,9 +10,11 @@ The following data from a sample catchment are provided (in SampleData folder) t
 
 INSTALLATION:
 
+Before installing `exphydro`, you must first install the `hydroutils` Python package, which is available here: https://github.com/sopanpatil/hydroutils
+
 Linux/Mac OS X:
 
-After downloading and extracting the exp-hydro folder from GitHub, open Terminal and navigate to the exp-hydro folder which contains the `setup.py` file.  Make sure that you have administrator priveleges (can be obtained by typing `su` in Linux).  Then, type the following command:
+After downloading and extracting the exp-hydro folder from GitHub, open Terminal and navigate to the exp-hydro folder which contains the `setup.py` file.  Make sure that you have administrator privileges (can be obtained by typing `su` in Linux).  Then, type the following command:
 
 ```bash
 python3 setup.py install
@@ -26,7 +28,7 @@ Use command prompt to navigate to the downloaded exp-hydro folder, and type the 
 setup.py install
 ```
 
-This will install `exphydro` and all its dependent packages on your computer.
+This will install `exphydro` on your computer.
 
 - - - -
 
