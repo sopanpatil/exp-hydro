@@ -8,9 +8,20 @@ The following data from a sample catchment are provided (in SampleData folder) t
 
 - - - -
 
+SYSTEM REQUIREMENTS:
+
+Please make sure that the following Python packages are installed on your computer before running any of the above execution files:
+(1) NumPy (http://www.numpy.org/)
+(2) SciPy (http://www.scipy.org/)
+(3) matplotlib (http://matplotlib.org/)
+
+- - - -
+
 INSTALLATION:
 
-Before installing `exphydro`, you must first install the `hydroutils` Python package, which is available here: https://github.com/sopanpatil/hydroutils
+You can download and start using `exphydro` straight away without installing it.
+
+Nonetheless, if you wish to install `exphydro` as a Python package, follow the instructions below.
 
 Linux/Mac OS X:
 
@@ -57,16 +68,6 @@ Type 3: A Type 3 model is a sub-catchment based distributed model where all sub-
 Type 4: A Type 4 model is a sub-catchment based distributed model (like Type 3) where each sub-catchment receives its own meteorological inputs.
 
 Only one execution file has been provided to quickly test the Type 1 distributed model (`Run_exphydro_distributed_type1_pso.py`).  This code calibrates the EXP-HYDRO parameters using the Particle Swarm Optimisation method for Type 1 model.
-
-- - - -
-
-SYSTEM REQUIREMENTS:
-
-Please make sure that the following Python packages are installed on your computer before running any of the above execution files:
-(1) NumPy (http://www.numpy.org/)
-(2) SciPy (http://www.scipy.org/)
-(3) matplotlib (http://matplotlib.org/)
-(4) hydroutils (https://github.com/sopanpatil/hydroutils)
 
 - - - -
 
